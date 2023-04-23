@@ -2,6 +2,7 @@ const express = require('express');
 const User = require('./Database/User');
 const GOMATO = require('./Database/GOMATO')
 const cors = require('cors');
+require('dotenv').config()
 
 require('./Database/config');
 const app = express();
@@ -18,7 +19,7 @@ app.use('/create', require('./Routers/OrderData'));
 
 
 
-app.listen(port,()=>{
+app.listen(process.env.PORT || 5000,()=>{
     console.log('This is running on 5000 port...');
 });
 
