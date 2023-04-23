@@ -16,7 +16,9 @@ app.use('/create', require('./Routers/Login'));
 app.use('/create', require('./Routers/DisplayData'));
 app.use('/create', require('./Routers/OrderData'));
 
-
+if(process.env.NODE_ENV == 'production'){
+    app.use(express.static('NODE_RESTRO'))
+}
 
 
 app.listen(process.env.PORT || 5000,()=>{
